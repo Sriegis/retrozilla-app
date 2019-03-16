@@ -15,7 +15,7 @@ const comments = [
     }
 ]
 
-const user = "Linas";
+const user = "😍";
 const jsx = <RetroCommentPage comments={comments} user={user}/>;
 
 

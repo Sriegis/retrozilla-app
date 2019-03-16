@@ -36,12 +36,11 @@ export default class RetroCommentForm extends React.Component {
     render() {
         return (
             <div>
-                <h3>Add new...</h3>
                 <form onSubmit={this.onSubmit}>
                     <input 
                         name="text"
                         type="text"
-                        placeholder="Your comment"
+                        placeholder="Your new comment"
                         onChange={this.onTextChange}
                         autoFocus
                     />
