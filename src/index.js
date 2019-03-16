@@ -6,15 +6,17 @@ import RetroCommentPage from './components/RetroCommentPage';
 
 const comments = [
     {
-        user: "Linas",
+        author: "Linas",
         text: "komentaras"
     },
     {
-        user: "Sima",
+        author: "Sima",
         text: "Kitas komentaras"
     }
 ]
-const jsx = <RetroCommentPage comments={comments}/>;
+
+const user = "Linas";
+const jsx = <RetroCommentPage comments={comments} user={user}/>;
 
 
 ReactDOM.render(jsx, document.getElementById('root'));
