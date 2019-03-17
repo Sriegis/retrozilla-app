@@ -1,6 +1,6 @@
-import React from "react"
-import RetroComment from "./RetroComment"
-import RetroCommentForm from "./RetroCommentForm"
+import React from "react";
+import RetroComment from "./RetroComment";
+import RetroCommentForm from "./RetroCommentForm";
 
 export default class RetroCommentPage extends React.Component {
     constructor(props) {
@@ -12,8 +12,8 @@ export default class RetroCommentPage extends React.Component {
     render() {
         return (
             <div>
+                <h1>Comments</h1>
                 <div>
-                    <h1>Comments</h1>
                     {
                         this.state.comments.map(comment => <RetroComment {...comment}/>)
                     }

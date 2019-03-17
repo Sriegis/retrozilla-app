@@ -22,7 +22,8 @@ export default class RetroCommentForm extends React.Component {
             };
             this.props.onSubmit({ ...comment });
             this.setState(() => ({ 
-                error: ""
+                error: "",
+                text: ""
             }));
             e.target.elements.text.value = "";
         }
