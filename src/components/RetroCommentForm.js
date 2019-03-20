@@ -20,7 +20,7 @@ export default class RetroCommentForm extends React.Component {
                 author: this.state.author,
                 text: this.state.text
             };
-            this.props.onSubmit({ ...comment });
+            this.props.onSubmit(comment);
             this.setState(() => ({ 
                 error: "",
                 text: ""

@@ -1,6 +1,7 @@
 import React from "react";
 import RetroComment from "./RetroComment";
 import RetroCommentForm from "./RetroCommentForm";
+import { SignalRService } from "../services/SignalRService";
 
 export default class RetroCommentPage extends React.Component {
     constructor(props) {
@@ -8,7 +9,14 @@ export default class RetroCommentPage extends React.Component {
         this.state = {
             comments: props.comments
         }
+        this.signalRService = new SignalRService(this.addComment);
+        this.signalRService.connect();
     }
+
+    addComment = (comment) => {
+        this.setState(() => this.state.comments.push(comment));
+    } 
+
     render() {
         return (
             <div>
@@ -22,7 +30,8 @@ export default class RetroCommentPage extends React.Component {
                     <RetroCommentForm 
                         author={this.props.user}
                         onSubmit={(comment) => {
-                            this.setState(() => (this.state.comments.push(comment)));
+                            this.addComment(comment);
+                            this.signalRService.publishComment(comment.author, comment.text);
                     }}/>
                 </div>
             </div>
