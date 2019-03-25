@@ -24,7 +24,7 @@ steps:
   inputs:
     SourceFolder: '$(System.DefaultWorkingDirectory)'
     Contents: |
-      build/*
+      build/**/*
       package.json
       package-lock.json
     TargetFolder: '$(Build.ArtifactStagingDirectory)'
