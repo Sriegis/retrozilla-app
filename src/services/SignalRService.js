@@ -7,10 +7,9 @@ export class SignalRService {
 
     connect = () => {
         this.hubConnection = new HubConnectionBuilder()
-            .withUrl("https://retrozilla-api.azurewebsites.net:5001/RetroZillaHub")
+            .withUrl("https://retrozilla-api.azurewebsites.net:5000/RetroZillaHub")
             .build();
 
-            
         this.hubConnection
             .start({ withCredentials: true })
             .then(() => console.log("Connection started!"))
