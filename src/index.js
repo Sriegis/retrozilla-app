@@ -4,20 +4,7 @@ import './styles/index.css';
 import * as serviceWorker from './serviceWorker';
 import RetroCommentPage from './components/RetroCommentPage';
 
-const comments = [
-    {
-        author: "Linas",
-        text: "komentaras"
-    },
-    {
-        author: "Sima",
-        text: "Kitas komentaras"
-    }
-]
-
-const user = "😍";
-const jsx = <RetroCommentPage comments={comments} user={user}/>;
-
+const jsx = <RetroCommentPage />;
 
 ReactDOM.render(jsx, document.getElementById('root'));
 

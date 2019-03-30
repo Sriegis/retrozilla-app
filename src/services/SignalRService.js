@@ -24,6 +24,5 @@ export class SignalRService {
         this.hubConnection
             .invoke("PublishComment", author, text)
             .catch(err => console.log(`failed to publish the comment, ${err}`));
-        console.log(`invoking publishComment with ${author}, ${text} in SignalRConnection`);
     }
 }

@@ -6,7 +6,6 @@ export default class RetroCommentForm extends React.Component {
 
         this.state = {
             text: "",
-            author: props.author,
             error: ""
         }
     }
@@ -16,11 +15,7 @@ export default class RetroCommentForm extends React.Component {
         if (!this.state.text) {
             this.setState(() => ({ error: "Please enter a comment." }));
         } else {
-            const comment = {
-                author: this.state.author,
-                text: this.state.text
-            };
-            this.props.onSubmit(comment);
+            this.props.onSubmit(this.state.text);
             this.setState(() => ({ 
                 error: "",
                 text: ""
